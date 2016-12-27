@@ -1,7 +1,7 @@
 version: "0.1.0"
 pre_ci_boot:
- image: 172.16.227.58:5000/tomcat6-jre6-centos6
- tag: "v2"
+ image: index.alauda.cn/demo100/compile
+ tag: "latest"
 ci:
  - mvn package
  - cp target/docker-demo.war $ALAUDACI_DEST_DIR
