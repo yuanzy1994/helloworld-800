@@ -14,6 +14,7 @@ RUN curl -SL https://archive.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCA
 RUN tar -xvf /tmp/tomcat.tar.gz -C /usr/local/ \
   && ln -s /usr/local/apache-tomcat-$TOMCAT_VERSION $CATALINA_HOME  \
   && rm -rf /tmp/tomcat.tar.gz
+RUN sed -i "s'<welcome-file>index.html</welcome-file>'<welcome-file>index.jsp</welcome-file>'g" /usr/local/tomcat6/conf/web.xml
 
 #ADD docker-demo.war /usr/local/apache-tomcat-6.0.45/webapps/
 ADD src/main/webapp /usr/local/apache-tomcat-6.0.45/webapps/ROOT
