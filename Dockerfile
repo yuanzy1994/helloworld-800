@@ -15,7 +15,8 @@ RUN tar -xvf /tmp/tomcat.tar.gz -C /usr/local/ \
   && ln -s /usr/local/apache-tomcat-$TOMCAT_VERSION $CATALINA_HOME  \
   && rm -rf /tmp/tomcat.tar.gz
 
-ADD docker-demo.war /usr/local/apache-tomcat-6.0.45/webapps/
+#ADD docker-demo.war /usr/local/apache-tomcat-6.0.45/webapps/
+ADD src/main/webapp /usr/local/apache-tomcat-6.0.45/webapps
 
 ### run ###
 EXPOSE 8080
